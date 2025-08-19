@@ -1,62 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Exam Prep</title>
-  <style>
-    body {
-      background-color: #E6E6FA; /* lavender */
-      text-align: center;
-      font-family: "Poppins", Arial, sans-serif;
-      margin-top: 100px;
-      color: #4B0082;
-    }
-    h2 {
-      font-size: 28px;
-    }
-    input {
-      padding: 10px;
-      border-radius: 8px;
-      border: 2px solid #9370DB;
-      margin-bottom: 20px;
-      font-size: 16px;
-      text-align: center;
-    }
-    button {
-      background-color: white;
-      border: 2px solid #9370DB;
-      color: #4B0082;
-      padding: 12px 24px;
-      margin: 10px;
-      border-radius: 12px;
-      font-size: 18px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    button:hover {
-      background-color: #D8BFD8;
-    }
-  </style>
-</head>
-<body>
-  <h2>Enter your name:</h2>
-  <input type="text" id="username" placeholder="Type your name here">
-  
-  <h2>Are you ready for tomorrow's exam?</h2>
-  <button onclick="answer('Yes 💪✨')">Yes</button>
-  <button onclick="answer('No 😅📚')">No</button>
 
-  <script>
-    function answer(response) {
-      const name = document.getElementById("username").value.trim();
-      if (!name) {
-        alert("Please enter your name first!");
-        return;
-      }
-      // send both name + answer through the URL
-      const url = "result.html?name=" + encodeURIComponent(name) + "&answer=" + encodeURIComponent(response);
-      window.location.href = url;
-    }
-  </script>
+<head>
+    <meta charset="UTF-8">
+    <title>Exam Prep</title>
+    <style>
+        body {
+            background-color: #E6E6FA;
+            /* lavender */
+            text-align: center;
+            font-family: "Poppins", Arial, sans-serif;
+            margin-top: 100px;
+            color: #4B0082;
+        }
+
+        h2 {
+            font-size: 28px;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 8px;
+            border: 2px solid #9370DB;
+            margin-bottom: 20px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        button {
+            background-color: white;
+            border: 2px solid #9370DB;
+            color: #4B0082;
+            padding: 12px 24px;
+            margin: 10px;
+            border-radius: 12px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #D8BFD8;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Enter your name:</h2>
+    <input type="text" id="username" placeholder="Type your name here">
+
+    <h2>Are you ready for tomorrow's exam?</h2>
+    <button onclick="answer('Yes 💪✨')">Yes</button>
+    <button onclick="answer('No 😅📚')">No</button>
+
+    <script>
+        function answer(response) {
+            const name = document.getElementById("username").value.trim();
+            if (!name) {
+                alert("Please enter your name first!");
+                return;
+            }
+            // send both name + answer through the URL
+            const url = "result.html?name=" + encodeURIComponent(name) + "&answer=" + encodeURIComponent(response);
+            window.location.href = url;
+        }
+    </script>
 </body>
+
 </html>
